@@ -1,25 +1,39 @@
-#include "publication.h"
+#include "publication.h"  
 
-Publication::Publication() : title(""), publisher(""), year(0) {}
+// Конструктор класу Publication
+Publication::Publication() : title(""), publisher(""), year(0) {
+    // Ініціалізація атрибутів класу значеннями за замовчуванням:
+    // title - порожній рядок
+    // publisher - порожній рядок
+    // year - 0
+}
 
+// Метод для встановлення назви публікації
 int Publication::SetTitle(string t) {
-    title = t;
-    return 1;
+    title = t;  // Присвоєння значення параметра t атрибуту title
+    return 1;    // Повертається 1, щоб вказати успішне виконання
 }
 
+// методи типу Set зазвичай використовуються для інкапсуляції: вони дозволяють змінювати значення атрибутів класу ззовні, при цьому контролюючи цей процес через методи класу.
+
+// Метод для встановлення видавництва публікації
 int Publication::SetPublisher(string p) {
-    publisher = p;
-    return 1;
+    publisher = p;  // Присвоєння значення параметра p атрибуту publisher
+    return 1;        // Повертається 1, щоб вказати успішне виконання
 }
 
+// Метод для встановлення року публікації
 int Publication::SetYear(int y) {
-    year = y;
-    return 1;
+    year = y;  // Присвоєння значення параметра y атрибуту year
+    return 1;   // Повертається 1, щоб вказати успішне виконання
+}
+ 
+// Метод для опису публікації
+int Publication::Describe() {
+    // Виведення інформації про публікацію
+    cout << "\nНазва: " << title;  // Виведення назви публікації
+    cout << "\nВидавництво: " << publisher;  // Виведення видавництва
+    cout << "\nРік видання: " << year << endl;  // Виведення року видання
+    return 1;  // Повертається 1, щоб вказати успішне виконання
 }
 
-int Publication::Describe() {
-    cout << "\nНазва: " << title;
-    cout << "\nВидавництво: " << publisher;
-    cout << "\nРік видання: " << year << endl;
-    return 1;
-}

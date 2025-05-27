@@ -1,16 +1,18 @@
-#ifndef FICTION_H
-#define FICTION_H
+#ifndef FICTION_H            
+#define FICTION_H            
 
-#include "book.h"
+#include "book.h"           
 
+// Оголошення класу Fiction — нащадка класу Book
 class Fiction : public Book {
 protected:
-    string genre;
+    string genre;            
 
 public:
-    Fiction();
-    int SetGenre(string g);
-    int Describe() override;
+    Fiction();               // Конструктор за замовчуванням
+
+    int SetGenre(string g);  
+    int Describe() override; 
 };
 
 #endif

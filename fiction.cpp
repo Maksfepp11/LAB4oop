@@ -1,14 +1,21 @@
-#include "fiction.h"
+#include "fiction.h"  
 
+// Конструктор класу Fiction
+// Ініціалізує поле genre як порожній рядок
 Fiction::Fiction() : genre("") {}
 
+// Метод для встановлення значення жанру книги
+// Приймає рядок g і присвоює його полю genre
 int Fiction::SetGenre(string g) {
-    genre = g;
-    return 1;
+    genre = g;  // Присвоюємо значення жанру
+    return 1;    // Повертаємо 1 — успішне виконання
 }
 
+// Метод для виведення інформації про художню книгу
+// Спочатку викликає метод Describe() з класу Book (виводить інформацію про автора, сторінки та ін.)
+// Потім виводить додатково жанр книги
 int Fiction::Describe() {
-    Book::Describe();
-    cout << "Жанр: " << genre << endl;
-    return 1;
+    Book::Describe();  // Викликає Describe з класу Book
+    cout << "Жанр: " << genre << endl;  
+    return 1;  // Повертає 1 — успішне виконання
 }

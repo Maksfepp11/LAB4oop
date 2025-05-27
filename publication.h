@@ -1,23 +1,33 @@
-#ifndef PUBLICATION_H
-#define PUBLICATION_H
+#ifndef PUBLICATION_H    
+#define PUBLICATION_H  
 
-#include <iostream>
-#include <string>
-using namespace std;
+#include <iostream>  // Підключення бібліотеки для вводу/виводу 
+#include <string>    // Підключення бібліотеки для роботи з рядками 
+using namespace std;  
 
-class Publication {
+class Publication {  // Оголошення класу Publication
 protected:
-    string title;
-    string publisher;
-    int year;
+    string title;     
+    string publisher; 
+    int year;         
 
 public:
-    Publication();
-    int SetTitle(string t);
-    int SetPublisher(string p);
-    int SetYear(int y);
-    virtual int Describe();
-    virtual ~Publication() {}
-};
+    Publication(); // Конструктор за замовчуванням, який ініціалізує значення
 
-#endif
+    int SetTitle(string t); // Метод для встановлення назви публікації
+
+    int SetPublisher(string p); // Метод для встановлення видавця публікації
+    
+    int SetYear(int y); // Метод для встановлення року видання публікації
+    
+    virtual int Describe(); // Віртуальний метод Describe, який буде перевизначений у похідних класах
+
+    
+    virtual ~Publication() {} // Віртуальний деструктор для правильного очищення пам'яті при видаленні об'єктів похідних класів
+    // він важливий бо від нбого успадковують інші класи
+    // virtual - поліморфізм динамічне викликання функцій
+};
+ // t, p, y  - це обєкти класу яка має власні значення для характеристик   
+
+ 
+#endif  
